@@ -1,0 +1,11 @@
+.header {
+  margin-right: 10px;
+  align-content: center;
+  text-align: center;
+  padding: 50px;
+  background-color: gainsboro;
+}
+
+.hover-cursor {
+  cursor: pointer;
+}

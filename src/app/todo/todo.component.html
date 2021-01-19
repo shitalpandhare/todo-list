@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row ">
+    <div class="col-md-10">
+      <div class="header">
+        <h1>To Do List App</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+      <input type="text" class="form-control" #title />
+    </div>
+    <div class="col-md-2">
+      <span>
+        <!-- <i class="fa-lg fa-plus-circle" (click)="addTitle(title)"></i> -->
+        <button class="btn btn-success" (click)="addTitle(title)">
+          Add
+        </button>
+      </span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let todo of todolist; let i = index"
+        >
+          <span [class.text-success]="todo.isChecked">
+            <i
+              [ngClass]="
+                todo.isChecked
+                  ? 'fa fa-check-circle-o fa-lg'
+                  : 'fa fa-circle-thin fa-lg'
+              "
+              (click)="check(i, todo.isChecked)"
+            ></i>
+          </span>
+          {{ todo.title }}
+          <span class="hover-cursor text-danger full-right">
+            <i class=" fa fa-trash-o fa-lg " (click)="onDelete(i)"></i>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
